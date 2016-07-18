@@ -40,29 +40,62 @@ public class Tablero {
     }
 
     public int minasCercanas(int i, int j) {
-        int contador = 0;
+        return buscarMinaAbajo(i, j) + buscarMinaAbajoDerecha(i, j)
+                + buscarMinaAbajoIzquierda(i, j) + buscarMinaIzquierda(i, j)
+                + buscarMinaDerecha(i, j) + buscarMinaArribaIzquierda(i, j);
+    }
+
+    // Empezamos a refactorizar
+    public int buscarMinaAbajo(int i, int j) {
         if (i + 1 != matriz.length && matriz[i + 1][j] == '*') {
             //verifica si hay mina abajo de [i][j]
-            contador++;
+            return 1;
+        } else {
+            return 0;
         }
+    }
+
+    public int buscarMinaDerecha(int i, int j) {
         if (j + 1 != matriz.length && matriz[i][j + 1] == '*') {
             //verifica si hay mina a la
-            contador++;               //derecha de [i][j]
+            return 1;               //derecha de [i][j]
+        } else {
+            return 0;
         }
+    }
+
+    public int buscarMinaAbajoDerecha(int i, int j) {
         if (i + 1 != matriz.length
                 && j + 1 != matriz.length && matriz[i + 1][j + 1] == '*') {//verifica si hay mina en la
-            contador++;                 // esquina inferior derecha de [i][j]
+            return 1;                 // esquina inferior derecha de [i][j]
+        } else {
+            return 0;
         }
-        if (j - 1 != -1 && i + 1 != matriz.length && matriz[i + 1][j - 1] == '*') {//verificar si hay mina en esquina
-            contador++;                   // inferior izquierda [i][j]
+    }
+
+    public int buscarMinaAbajoIzquierda(int i, int j) {
+        if (j - 1 != -1 && i + 1 != matriz.length && matriz[i + 1][j - 1] == '*') {
+            //verificar si hay mina en esquina
+            return 1;                   // inferior izquierda [i][j]
+        } else {
+            return 0;
         }
+    }
+
+    public int buscarMinaIzquierda(int i, int j) {
         if (j - 1 != -1 && matriz[i][j - 1] == '*') { //verifica si hay mina a la izquierda
-            contador++;
+            return 1;
+        } else {
+            return 0;
         }
-        if (i - 1 != -1 && j - 1 != -1 && matriz[i - 1][j - 1] == '*') {//verifica si hay mina en la esquina
-            contador++;                   //superior izquierda [i][j]
+    }
+
+    public int buscarMinaArribaIzquierda(int i, int j) {
+        if (j - 1 != -1 && matriz[i][j - 1] == '*') { //verifica si hay mina a la izquierda
+            return 1;
+        } else {
+            return 0;
         }
-        return contador;
     }
 
     public void imprimir() {
