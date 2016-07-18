@@ -109,7 +109,9 @@ public class tableroTest {
         tablero.colocarMina(4, 2);
         tablero.colocarMina(3, 2);
         tablero.colocarMina(2, 2);
+// agrego imprimir
 
+        tablero.imprimir();
         int minasCercanas = tablero.minasCercanas(3, 3);
         assertEquals(6, minasCercanas);
     }
