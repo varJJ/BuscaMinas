@@ -7,7 +7,10 @@ public class Tablero {
     public Tablero(int n) {
         matriz = new char[n][n];
     }
-
+    
+     public void a(){
+     }
+     
     public boolean seCreoTablero() {
         boolean existeTablero = false;
         if (matriz.length != 0) {
