@@ -8,7 +8,7 @@ public class Tablero {
         matriz = new char[n][n];
     }
 
-    public boolean seCreoTablero() {
+    public boolean seCreoTablero(int n) {
         boolean existeTablero = false;
         if (matriz.length != 0) {
             existeTablero = true;

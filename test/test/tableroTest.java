@@ -9,7 +9,7 @@ public class tableroTest {
     @Test
     public void testCrearTablero() {
         Tablero tablero = new Tablero(1);
-        boolean existeTablero = tablero.seCreoTablero();
+        boolean existeTablero = tablero.seCreoTablero(1);
 
         assertTrue(existeTablero);
     }
@@ -17,7 +17,7 @@ public class tableroTest {
     @Test
     public void testCrearTableroSinTablero() {
         Tablero tablero = new Tablero(0);
-        boolean existeTablero = tablero.seCreoTablero();
+        boolean existeTablero = tablero.seCreoTablero(0);
 
         assertFalse(existeTablero);
     }
@@ -25,7 +25,7 @@ public class tableroTest {
     @Test
     public void testCrearTablero1() {
         Tablero tablero = new Tablero(1);
-        boolean existeTablero = tablero.seCreoTablero();
+        boolean existeTablero = tablero.seCreoTablero(1);
         int tamanho = tablero.matriz.length;
 
         assertTrue(existeTablero);
