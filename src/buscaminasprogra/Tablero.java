@@ -16,7 +16,6 @@ public class Tablero {
         }
         return existeTablero;
     }
-<<<<<<< HEAD
 
     public void colocarMina(int i, int j) {
         matriz[i][j] = '*';
@@ -125,6 +124,5 @@ public class Tablero {
             System.out.println("");
         }
     }
-=======
->>>>>>> 22667b2f84489770447c681056647e2dc7cda7b1
+
 }

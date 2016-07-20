@@ -45,8 +45,7 @@ public class tableroTest {
         Tablero tablero = new Tablero(-1);
         boolean posicionValida = tablero.seCreoTablero(-1);
 
-<<<<<<< HEAD
-        assertEquals('*', mina);
+        assertFalse(posicionValida);
     }
 
     public void metodovacio() {
@@ -115,9 +114,7 @@ public class tableroTest {
 
         int minasCercanas = tablero.minasCercanas(3, 3);
         assertEquals(6, minasCercanas);
-=======
-        assertFalse(posicionValida);
->>>>>>> 22667b2f84489770447c681056647e2dc7cda7b1
+
     }
 
     @Test
