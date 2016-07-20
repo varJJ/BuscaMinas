@@ -5,16 +5,18 @@ public class Tablero {
     public char matriz[][];
 
     public Tablero(int n) {
-        matriz = new char[n][n];
+        seCreoTablero(n);
     }
 
     public boolean seCreoTablero(int n) {
         boolean existeTablero = false;
-        if (matriz.length != 0) {
+        if (n > 0) {
             existeTablero = true;
+            matriz = new char[n][n];
         }
         return existeTablero;
     }
+<<<<<<< HEAD
 
     public void colocarMina(int i, int j) {
         matriz[i][j] = '*';
@@ -123,4 +125,6 @@ public class Tablero {
             System.out.println("");
         }
     }
+=======
+>>>>>>> 22667b2f84489770447c681056647e2dc7cda7b1
 }
