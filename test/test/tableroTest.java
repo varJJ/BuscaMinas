@@ -113,4 +113,22 @@ public class tableroTest {
         int minasCercanas = tablero.minasCercanas(3, 3);
         assertEquals(6, minasCercanas);
     }
+
+    @Test
+    public void testContar8Minas() {
+        Tablero tablero = new Tablero(5);
+        tablero.colocarMina(3, 4);
+        tablero.colocarMina(4, 3);
+        tablero.colocarMina(4, 4);
+        tablero.colocarMina(4, 2);
+        tablero.colocarMina(3, 2);
+        tablero.colocarMina(2, 2);
+        tablero.colocarMina(2, 3);
+        tablero.colocarMina(2, 4);
+
+        tablero.imprimir();
+        int minasCercanas = tablero.minasCercanas(3, 3);
+        assertEquals(8, minasCercanas);
+    }
+
 }

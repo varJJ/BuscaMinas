@@ -42,7 +42,8 @@ public class Tablero {
     public int minasCercanas(int i, int j) {
         return buscarMinaAbajo(i, j) + buscarMinaAbajoDerecha(i, j)
                 + buscarMinaAbajoIzquierda(i, j) + buscarMinaIzquierda(i, j)
-                + buscarMinaDerecha(i, j) + buscarMinaArribaIzquierda(i, j);
+                + buscarMinaDerecha(i, j) + buscarMinaArribaIzquierda(i, j)
+                + buscarMinaArriba(i, j) + buscarMinaArribaDerecha(i, j);
     }
 
     // Empezamos a refactorizar
@@ -92,6 +93,22 @@ public class Tablero {
 
     public int buscarMinaArribaIzquierda(int i, int j) {
         if (j - 1 != -1 && matriz[i][j - 1] == '*') { //verifica si hay mina a la izquierda
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public int buscarMinaArriba(int i, int j) {
+        if (i - 1 != -1 && matriz[i - 1][j] == '*') {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public int buscarMinaArribaDerecha(int i, int j) {
+        if (j + 1 != matriz.length && i - 1 != -1 && matriz[i - 1][j + 1] == '*') {
             return 1;
         } else {
             return 0;
