@@ -1,2 +1,12 @@
+<<<<<<< OURS
+<<<<<<< HEAD
 /build/
 /dist/
+=======
+/nbproject/private/
+/build/
+>>>>>>> refs/remotes/origin/master
+=======
+/nbproject/private/
+/build/
+>>>>>>> THEIRS

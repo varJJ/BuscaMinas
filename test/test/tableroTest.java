@@ -49,6 +49,9 @@ public class tableroTest {
         assertEquals('*', mina);
     }
 
+    public void metodovacio() {
+    }
+
     @Test
     public void testContar1MinaEnTablero() {
         Tablero tablero = new Tablero(5);
