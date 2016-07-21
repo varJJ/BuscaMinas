@@ -93,7 +93,8 @@ public class Tablero {
     }
 
     public int buscarMinaArribaIzquierda(int i, int j) {
-        if (j - 1 != -1 && matriz[i][j - 1] == '*') { //verifica si hay mina a la izquierda
+        if (i - 1 != -1
+                && j - 1 != -1 && matriz[i - 1][j - 1] == '*') { //verifica si hay mina a la izquierda
             return 1;
         } else {
             return 0;
@@ -116,6 +117,10 @@ public class Tablero {
         }
     }
 
+    public void numerarCasilla(int i, int j) {
+        matriz[i][j] = Integer.toString(minasCercanas(i, j)).charAt(0);
+    }
+
     public void imprimir() {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
@@ -125,4 +130,25 @@ public class Tablero {
         }
     }
 
+    public boolean MatrizLlena() {
+        boolean respuesta = true;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                if (matriz[i][j] == '\u0000') {
+                    respuesta = false;
+                }
+            }
+        }
+        return respuesta;
+    }
+
+    public void llenarMatrizConNumeros() {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                if (matriz[i][j] != '*') {
+                    numerarCasilla(i, j);
+                }
+            }
+        }
+    }
 }
