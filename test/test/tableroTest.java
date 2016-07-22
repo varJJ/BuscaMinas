@@ -241,4 +241,20 @@ public class tableroTest {
         int minas = tablero.minasCercanas(3, 3);
         assertEquals(1, minas);
     }
+    @Test
+    public void testBuscaMinaArriba() {
+        Tablero tablero = new Tablero(5);
+        tablero.colocarMina(2, 3);
+
+        int minas = tablero.minasCercanas(3, 3);
+        assertEquals(1, minas);
+    }
+    @Test
+    public void testBuscaMinaArribaDerecha() {
+        Tablero tablero = new Tablero(5);
+        tablero.colocarMina(2, 4);
+
+        int minas = tablero.minasCercanas(3, 3);
+        assertEquals(1, minas);
+    }
 }
